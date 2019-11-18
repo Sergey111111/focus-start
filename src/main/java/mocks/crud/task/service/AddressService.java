@@ -9,7 +9,7 @@ public class AddressService implements CrudRepository<Long, Address> {
 
 private CrudRepository<Long, Address> addressRepository;
 
-    public AddressService(AddressService addressRepository) {
+    public AddressService(CrudRepository<Long, Address> addressRepository) {
         this.addressRepository = addressRepository;
     }
 
