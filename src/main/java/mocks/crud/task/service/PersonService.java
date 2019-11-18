@@ -10,45 +10,40 @@ import java.util.List;
 public class PersonService implements  AdvancedRepository {
 
     private AddressService addressService;
-
     private CrudRepository<Long, Person> personRepository;
 
-    public PersonService(AddressService addressService) {
+    public PersonService(AddressService addressService, CrudRepository<Long, Person> personRepository) {
         this.addressService = addressService;
+        this.personRepository = personRepository;
     }
 
     @Override
     public List<Person> findAllRelatives(Person person) {
-        //todo написать реализацию
-        return null;
+        return person.getRelatives();
     }
 
     @Override
     public Address getAddress(Person person) {
-        //todo написать реализацию
-        return null;
+        return person.getAddress();
     }
 
     public void save(Person element) {
-        //todo написать реализацию
+        personRepository.save(element);
     }
 
     public Person findById(Long id) {
-        //todo написать реализацию
-        return null;
+        return personRepository.findById(id);
     }
 
     public List<Person> findAll() {
-        //todo написать реализацию
-        return null;
+        return personRepository.findAll();
     }
 
     public Person update(Person element) {
-        //todo написать реализацию
-        return null;
+        return personRepository.update(element);
     }
 
     public void delete(Person element) {
-        //todo написать реализацию
+        personRepository.delete(element);
     }
 }
