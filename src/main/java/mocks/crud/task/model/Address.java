@@ -6,6 +6,11 @@ public class Address {
 
     private String address;
 
+    public Address(Long id, String address) {
+        this.id = id;
+        this.address = address;
+    }
+
     public Long getId() {
         return id;
     }
